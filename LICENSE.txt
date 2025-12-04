@@ -1,0 +1,11 @@
+Copyright (c) 2025 Innovation Strategies. All rights reserved.
+
+This repository contains public website content for StarBridgeOS.com.
+
+No license is granted to use, copy, modify, merge, publish, distribute, sublicense, or sell copies of this content,
+except with explicit written permission from Innovation Strategies.
+
+StarBridge, StarBridgeOS, and related marks are used in connection with the StarBridge Personal AI Operating System project.
+
+This file does not alter or describe any patent rights or patent applications related to StarBridge.
+Patent status and scope are governed by the relevant filings.
