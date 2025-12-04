@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>StarBridgeOS — Personal AI Operating System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="StarBridgeOS is a neutral Personal AI Operating System that provides portable identity, context, and behavior across AI models and providers.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+  <header class="sb-header">
+    <div class="sb-header-inner">
+      <div class="sb-logo">StarBridgeOS</div>
+      <div class="sb-tagline">Personal AI Operating System</div>
+      <a href="#contact" class="sb-cta-link">Request Private Briefing</a>
+    </div>
+  </header>
+
+  <main class="sb-main">
+    <section class="sb-section sb-hero">
+      <h1>StarBridge — Personal AI Operating System</h1>
+      <p class="sb-lead">
+        A neutral, portable identity and context layer that sits above individual AI models and providers.
+      </p>
+    </section>
+
+    <section class="sb-section" id="problem">
+      <h2>The Problem</h2>
+      <p>
+        AI interactions today are fragmented. Each product and provider maintains its own partial view of the user,
+        binding identity and behavior to specific accounts, models, or user interfaces. Long-term memory is scattered,
+        brittle, or controlled by vendors, making privacy, portability, and continuity difficult to guarantee.
+      </p>
+      <p>There is no neutral infrastructure layer that allows a user’s AI identity and context to be:</p>
+      <ul>
+        <li>Owned by the user</li>
+        <li>Portable across engines and providers</li>
+        <li>Stable over time, even as models change</li>
+      </ul>
+      <p>StarBridge exists to solve that problem.</p>
+    </section>
+
+    <section class="sb-section" id="architecture">
+      <h2>StarBridge Architecture (High-Level)</h2>
+      <p>
+        StarBridge is defined by the StarBridge Master Development Language (MDL) and implemented through six core modules:
+      </p>
+      <ul>
+        <li><strong>Core File (CF)</strong> — Portable, user-owned identity and context artifact.</li>
+        <li><strong>SYNC (Cross-Model Sync Layer)</strong> — Synchronizes identity and memory across heterogeneous AI engines.</li>
+        <li><strong>Runtime (RT)</strong> — Loads the Core File, configures engines, and enforces global invariants.</li>
+        <li><strong>Identity-as-a-Service (IaaS)</strong> — Exposes limited identity slices to external applications under explicit policy.</li>
+        <li><strong>Adaptive Cognitive Layer (ACL)</strong> — Maintains behavioral and cognitive consistency across models and versions.</li>
+        <li><strong>Fractured Identity Protocol (FIP)</strong> — Stores identity as encrypted micro-shards with no reconstructable state at rest.</li>
+      </ul>
+      <p class="sb-inline-diagram">
+        Core File → Runtime → SYNC → { IaaS, ACL, FIP }
+      </p>
+    </section>
+
+    <section class="sb-section" id="properties">
+      <h2>Key Properties</h2>
+      <ul>
+        <li><strong>Portable Identity</strong> — Identity and long-term context are encoded in a Core File independent of any AI provider.</li>
+        <li><strong>Model & Vendor Neutrality</strong> — Designed to run against multiple commercial and local models via adapters.</li>
+        <li><strong>Behavioral Consistency</strong> — ACL maintains a stable persona across model updates and vendors.</li>
+        <li><strong>Privacy-First Architecture</strong> — FIP stores identity as encrypted shards, reconstructable only inside a validated runtime.</li>
+        <li><strong>Compliance-Friendly</strong> — Clear separation of identity, memory, and engine layers supports audit and policy enforcement.</li>
+      </ul>
+    </section>
+
+    <section class="sb-section" id="use-cases">
+      <h2>Example Use Cases</h2>
+      <p>StarBridge is infrastructure for organizations that need:</p>
+      <ul>
+        <li><strong>Multi-model identity</strong> across engines and providers</li>
+        <li><strong>Privacy-sensitive deployments</strong> requiring FIP-level guarantees</li>
+        <li><strong>Stable evaluation environments</strong> for consistent personas</li>
+        <li><strong>Platform-level integrations</strong> via limited, policy-scoped identity slices</li>
+      </ul>
+    </section>
+
+    <section class="sb-section" id="ip">
+      <h2>Patents & Intellectual Property</h2>
+      <p>
+        The StarBridge architecture is governed by the Master Development Language (MDL) and implemented through the Master Development Coding Ledger (MDCL). The underlying technologies are protected by provisional patent filings held by Innovation Strategies:
+      </p>
+      <ul>
+        <li>Core File (CF)</li>
+        <li>SYNC Layer</li>
+        <li>Runtime Architecture</li>
+        <li>IaaS Layer</li>
+        <li>ACL System</li>
+        <li>FIP Memory Protocol</li>
+      </ul>
+    </section>
+
+    <section class="sb-section" id="governance">
+      <h2>Founder Anonymity & Governance</h2>
+      <p>
+        StarBridge is developed and governed by <strong>Innovation Strategies</strong>, a private technology entity. Individual identities are intentionally kept off this public surface; technical and strategic details are available privately under NDA.
+      </p>
+    </section>
+
+    <section class="sb-section" id="contact">
+      <h2>Request a Private Briefing</h2>
+      <p>This form is inert until a private endpoint is configured.</p>
+
+      <form class="sb-contact-form" method="post" action="#">
+        <div class="sb-form-group">
+          <label for="name">Name / Organization</label>
+          <input type="text" id="name" name="name">
+        </div>
+
+        <div class="sb-form-group">
+          <label for="email">Work Email</label>
+          <input type="email" id="email" name="email">
+        </div>
+
+        <div class="sb-form-group">
+          <label for="role">Role / Area of Responsibility</label>
+          <input type="text" id="role" name="role">
+        </div>
+
+        <div class="sb-form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="sb-button">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="sb-footer">
+    <p>© 2025 Innovation Strategies. All rights reserved.</p>
+    <p>Patents pending. StarBridge and StarBridgeOS are marks of Innovation Strategies.</p>
+    <p>This site uses no analytics or tracking beyond standard hosting logs.</p>
+  </footer>
+</body>
+</html>
