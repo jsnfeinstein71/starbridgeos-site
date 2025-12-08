@@ -2,126 +2,495 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>StarBridgeOS — Personal AI Operating System</title>
+  <title>StarBridge OS — The Operating System for Governed Intelligence</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="StarBridgeOS is a neutral Personal AI Operating System that provides portable identity, context, and behavior across AI models and providers.">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" href="favicon.ico">
+  <meta name="description" content="StarBridge OS is the operating system for governed intelligence — a universal AI governance and identity layer for autonomous systems, agents, and AI infrastructure.">
+  <style>
+    :root {
+      --bg-deep: #040814;
+      --bg-card: #1A1F2A;
+      --accent-cyan: #3FE0FF;
+      --accent-blue: #1C7CFF;
+      --text-main: #F5F7FB;
+      --text-muted: #9FA7B5;
+      --border-subtle: #262C3A;
+      --max-width: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #10172A 0, #040814 55%);
+      color: var(--text-main);
+    }
+
+    a { color: var(--accent-cyan); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      border-bottom: 1px solid var(--border-subtle);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: linear-gradient(to bottom, rgba(4,8,20,0.95), rgba(4,8,20,0.85));
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.8rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-mark {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      border: 1px solid var(--accent-cyan);
+      position: relative;
+    }
+
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      width: 110%;
+      height: 2px;
+      background: var(--accent-cyan);
+      left: -5%;
+      bottom: 30%;
+      border-radius: 999px;
+      opacity: 0.8;
+    }
+
+    .logo-text {
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-main);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-cyan);
+    }
+
+    .button-primary {
+      background: var(--accent-blue);
+      color: var(--text-main);
+      padding: 0.55rem 1.2rem;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .button-primary:hover {
+      background: #3A8BFF;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.4rem 1.2rem 4rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 2fr);
+      gap: 2.5rem;
+      align-items: center;
+      padding: 2.5rem 0 3rem;
+    }
+
+    .hero-kicker {
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      line-height: 1.15;
+      margin: 0 0 1rem;
+    }
+
+    .hero p {
+      margin: 0 0 1.4rem;
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      align-items: center;
+    }
+
+    .button-secondary {
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      background: transparent;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .button-secondary:hover {
+      border-color: var(--accent-cyan);
+      color: var(--text-main);
+    }
+
+    .hero-graphic {
+      border-radius: 18px;
+      border: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at top, #111827 0, #020617 80%);
+      padding: 1.6rem;
+      position: relative;
+      overflow: hidden;
+      min-height: 260px;
+    }
+
+    .orbital {
+      position: absolute;
+      border-radius: 999px;
+      border: 1px dashed rgba(63,224,255,0.22);
+    }
+    .orbital.o1 { width: 75%; height: 75%; top: 11%; left: 13%; }
+    .orbital.o2 { width: 52%; height: 52%; top: 22%; left: 24%; }
+    .orbital.o3 { width: 32%; height: 32%; top: 34%; left: 35%; border-style: solid; border-color: rgba(63,224,255,0.45); }
+
+    .node {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent-cyan);
+      box-shadow: 0 0 12px rgba(63,224,255,0.7);
+    }
+    .node.n1 { top: 18%; left: 52%; }
+    .node.n2 { top: 58%; left: 22%; }
+    .node.n3 { top: 71%; left: 68%; }
+    .node.n4 { top: 34%; left: 30%; }
+    .node.n5 { top: 44%; left: 72%; }
+
+    .hero-graphic h2 {
+      position: relative;
+      margin: 0 0 0.4rem;
+      font-size: 1rem;
+      z-index: 2;
+    }
+
+    .hero-graphic p {
+      position: relative;
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      max-width: 80%;
+      z-index: 2;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.7rem;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 1.2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 6px rgba(34,197,94,0.8);
+    }
+
+    section {
+      margin: 2.5rem 0 0;
+    }
+
+    section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.7rem;
+    }
+
+    section p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin: 0.2rem 0 0.5rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #0B1020, #050815);
+      border-radius: 14px;
+      padding: 1rem;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin: 0 0 0.4rem;
+    }
+
+    .meta-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .usecases {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    .footer-cta {
+      margin-top: 3rem;
+      padding: 1.6rem 1.4rem;
+      border-radius: 16px;
+      border: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at top left, rgba(63,224,255,0.14), transparent 55%);
+      text-align: center;
+    }
+
+    .footer-cta h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-cta p {
+      margin-bottom: 1.1rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 3rem;
+      padding: 1.2rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-graphic { order: -1; }
+      .grid-3 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .usecases {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="sb-header">
-    <div class="sb-header-inner">
-      <div class="sb-logo">StarBridgeOS</div>
-      <div class="sb-tagline">Personal AI Operating System</div>
-      <a href="#contact" class="sb-cta-link">Request Private Briefing</a>
+<header>
+  <div class="nav-inner">
+    <div class="logo">
+      <div class="logo-mark"></div>
+      <div class="logo-text">StarBridge OS</div>
     </div>
-  </header>
+    <nav class="nav-links">
+      <a href="#what">Technology</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#usecases">Use Cases</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="button-primary" onclick="location.href='#contact'">Enterprise Inquiries</button>
+  </div>
+</header>
 
-  <main class="sb-main">
-    <section class="sb-section sb-hero">
-      <h1>StarBridge — Personal AI Operating System</h1>
-      <p class="sb-lead">
-        A neutral, portable identity and context layer that sits above individual AI models and providers.
-      </p>
-    </section>
-
-    <section class="sb-section" id="problem">
-      <h2>The Problem</h2>
+<main>
+  <section class="hero">
+    <div>
+      <div class="hero-kicker">Governed Intelligence</div>
+      <h1>The Operating System for Autonomous AI</h1>
       <p>
-        AI interactions today are fragmented. Each product and provider maintains its own partial view of the user,
-        binding identity and behavior to specific accounts, models, or user interfaces. Long-term memory is scattered,
-        brittle, or controlled by vendors, making privacy, portability, and continuity difficult to guarantee.
+        StarBridge OS provides the missing layer in artificial intelligence: a universal
+        governance and identity architecture that keeps autonomous systems safe, stable,
+        and accountable—across any model, device, or environment.
       </p>
-      <p>There is no neutral infrastructure layer that allows a user’s AI identity and context to be:</p>
-      <ul>
-        <li>Owned by the user</li>
-        <li>Portable across engines and providers</li>
-        <li>Stable over time, even as models change</li>
-      </ul>
-      <p>StarBridge exists to solve that problem.</p>
-    </section>
+      <div class="hero-actions">
+        <button class="button-primary" onclick="location.href='#usecases'">Explore Use Cases</button>
+        <button class="button-secondary" onclick="location.href='#what'">View Architecture</button>
+      </div>
+    </div>
+    <div class="hero-graphic" aria-hidden="true">
+      <div class="orbital o1"></div>
+      <div class="orbital o2"></div>
+      <div class="orbital o3"></div>
+      <div class="node n1"></div>
+      <div class="node n2"></div>
+      <div class="node n3"></div>
+      <div class="node n4"></div>
+      <div class="node n5"></div>
+      <h2>Governed Intelligence Layer</h2>
+      <p>Kernel rules, identity shards, drift detection,
+         and cross-model sync—bound together as a single OS for AI.</p>
+      <div class="pill">
+        <span class="pill-dot"></span>
+        <span>Runtime: Online · ACL: Stable · FIP: In Design</span>
+      </div>
+    </div>
+  </section>
 
-    <section class="sb-section" id="architecture">
-      <h2>StarBridge Architecture (High-Level)</h2>
-      <p>
-        StarBridge is defined by the StarBridge Master Development Language (MDL) and implemented through six core modules:
-      </p>
-      <ul>
-        <li><strong>Core File (CF)</strong> — Portable, user-owned identity and context artifact.</li>
-        <li><strong>SYNC (Cross-Model Sync Layer)</strong> — Synchronizes identity and memory across heterogeneous AI engines.</li>
-        <li><strong>Runtime (RT)</strong> — Loads the Core File, configures engines, and enforces global invariants.</li>
-        <li><strong>Identity-as-a-Service (IaaS)</strong> — Exposes limited identity slices to external applications under explicit policy.</li>
-        <li><strong>Adaptive Cognitive Layer (ACL)</strong> — Maintains behavioral and cognitive consistency across models and versions.</li>
-        <li><strong>Fractured Identity Protocol (FIP)</strong> — Stores identity as encrypted micro-shards with no reconstructable state at rest.</li>
-      </ul>
-      <p class="sb-inline-diagram">
-        Core File → Runtime → SYNC → { IaaS, ACL, FIP }
-      </p>
-    </section>
+  <section id="what">
+    <h2>What Is StarBridge OS?</h2>
+    <p>
+      StarBridge OS is an AI governance and identity layer that sits beneath models and above
+      hardware. It enforces identity, behavior, and continuity so that autonomous systems
+      can be trusted in security, robotics, enterprise, and mission-critical environments.
+    </p>
+    <p>
+      Models generate intelligence. StarBridge OS governs it.
+    </p>
+  </section>
 
-    <section class="sb-section" id="properties">
-      <h2>Key Properties</h2>
-      <ul>
-        <li><strong>Portable Identity</strong> — Identity and long-term context are encoded in a Core File independent of any AI provider.</li>
-        <li><strong>Model & Vendor Neutrality</strong> — Designed to run against multiple commercial and local models via adapters.</li>
-        <li><strong>Behavioral Consistency</strong> — ACL maintains a stable persona across model updates and vendors.</li>
-        <li><strong>Privacy-First Architecture</strong> — FIP stores identity as encrypted shards, reconstructable only inside a validated runtime.</li>
-        <li><strong>Compliance-Friendly</strong> — Clear separation of identity, memory, and engine layers supports audit and policy enforcement.</li>
-      </ul>
-    </section>
+  <section id="architecture">
+    <h2>Architecture · The Seven Pillars of StarBridge</h2>
+    <p class="meta-label">Core System Components</p>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Kernel</h3>
+        <p>The constitutional layer for AI behavior: mode control, safety rules, uncertainty
+           labeling, and deterministic identity enforcement.</p>
+      </div>
+      <div class="card">
+        <h3>FIP · Fractured Identity Protocol</h3>
+        <p>Identity as encrypted shards instead of monoliths. Zero-knowledge reconstruction,
+           portable across devices and models.</p>
+      </div>
+      <div class="card">
+        <h3>SYNC</h3>
+        <p>Cross-model, cross-device cognitive state sync—so the same intelligence can operate
+           everywhere without fragmentation.</p>
+      </div>
+      <div class="card">
+        <h3>Runtime</h3>
+        <p>The execution engine that loads rules, identity shards, and ACL configuration, and
+           enforces them beneath any model or agent.</p>
+      </div>
+      <div class="card">
+        <h3>ACL · Adaptive Cognitive Layer</h3>
+        <p>Drift detection and cognitive fingerprinting that keep reasoning, tone, and behavior
+           stable over time.</p>
+      </div>
+      <div class="card">
+        <h3>CVP &amp; IaaS</h3>
+        <p>Concept Verification Protocol and Identity-as-a-Service provide safe concept binding
+           and signed identity slices for any app.</p>
+      </div>
+    </div>
+  </section>
 
-    <section class="sb-section" id="use-cases">
-      <h2>Example Use Cases</h2>
-      <p>StarBridge is infrastructure for organizations that need:</p>
-      <ul>
-        <li><strong>Multi-model identity</strong> across engines and providers</li>
-        <li><strong>Privacy-sensitive deployments</strong> requiring FIP-level guarantees</li>
-        <li><strong>Stable evaluation environments</strong> for consistent personas</li>
-        <li><strong>Platform-level integrations</strong> via limited, policy-scoped identity slices</li>
-      </ul>
-    </section>
+  <section id="usecases">
+    <h2>Where StarBridge Operates</h2>
+    <p>From a single assistant to a city-wide autonomous ecosystem, StarBridge OS governs
+       intelligence wherever it runs.</p>
+    <div class="usecases">
+      <div class="card">
+        <h3>Autonomous Security &amp; Drone Fleets</h3>
+        <p>Govern multi-agent aerial or ground systems with identity shards, drift detection,
+           and mission-level guardrails.</p>
+      </div>
+      <div class="card">
+        <h3>Robotics &amp; Industrial Automation</h3>
+        <p>Provide robots with persistent, governed identities and predictable behavior across
+           tasks, teams, and facilities.</p>
+      </div>
+      <div class="card">
+        <h3>Enterprise AI Infrastructure</h3>
+        <p>Stabilize agent teams, decision systems, and internal tools with cross-model
+           continuity and compliance-aware governance.</p>
+      </div>
+      <div class="card">
+        <h3>AI Assistants &amp; Synthetic Personas</h3>
+        <p>Ensure that long-lived AI personalities remain consistent, auditable, and aligned—
+           no matter where they run.</p>
+      </div>
+    </div>
+  </section>
 
-    <section class="sb-section" id="ip">
-      <h2>Patents & Intellectual Property</h2>
-      <p>
-        The StarBridge architecture is governed by the Master Development Language (MDL) and implemented through the Master Development Coding Ledger (MDCL). The underlying technologies are protected by provisional patent filings held by Innovation Strategies:
-      </p>
-      <ul>
-        <li>Core File (CF)</li>
-        <li>SYNC Layer</li>
-        <li>Runtime Architecture</li>
-        <li>IaaS Layer</li>
-        <li>ACL System</li>
-        <li>FIP Memory Protocol</li>
-      </ul>
-    </section>
+  <section>
+    <h2>Patents &amp; Intellectual Property</h2>
+    <p>
+      StarBridge OS is protected by a growing portfolio of patents covering portable AI
+      identity, runtime governance architecture, cross-model sync, adaptive cognitive
+      layers, and identity-as-a-service.
+    </p>
+    <p>
+      For detailed patent information or licensing discussions, contact us directly.
+    </p>
+  </section>
 
-    <section class="sb-section" id="governance">
-      <h2>Founder Anonymity & Governance</h2>
-      <p>
-        StarBridge is developed and governed by <strong>Innovation Strategies</strong>, a private technology entity.
-        Individual identities are intentionally kept off this public surface; technical and strategic details are
-        available privately under NDA.
-      </p>
-    </section>
+  <section id="contact" class="footer-cta">
+    <h2>Enterprise &amp; Research Inquiries</h2>
+    <p>
+      StarBridge OS is currently in active development with runtime and governance components
+      online. We are open to confidential discussions with enterprises, research teams, and
+      autonomous system builders.
+    </p>
+    <button class="button-primary" onclick="location.href='mailto:cArl@starbridgeos.com'">
+      Contact StarBridge OS
+    </button>
+  </section>
+</main>
 
-    <!-- ⭐ REPLACED CONTACT SECTION -->
-    <section class="sb-section" id="contact">
-      <h2>Request a Private Briefing</h2>
-      <p>
-        To request a private briefing, please use the secure contact page.
-      </p>
+<footer>
+  &copy; <span id="year"></span> StarBridge OS · Innovation Strategies LLC (Wyoming) · All rights reserved.
+</footer>
 
-      <a href="contact.html" class="sb-button">
-        Open Contact Page
-      </a>
-    </section>
-  </main>
-
-  <footer class="sb-footer">
-    <p>© 2025 Innovation Strategies. All rights reserved.</p>
-    <p>Patents pending. StarBridge and StarBridgeOS are marks of Innovation Strategies.</p>
-    <p>This site uses no analytics or tracking beyond standard hosting logs.</p>
-  </footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
