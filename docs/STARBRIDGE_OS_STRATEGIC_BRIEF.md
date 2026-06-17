@@ -10,11 +10,11 @@ Enterprise AI is moving beyond simple prompt-response tools, generic chatbots, a
 
 StarBridge OS is a governance runtime for identity-bound AI. It sits above models and beneath applications, providing authority-state governance, identity-bound continuity, drift boundaries, disclosure control, representative-action gating, and audit-sensitive operation across changing models and environments.
 
-Innovation Strategies is building a stack around governed institutional intelligence:
+Innovation Strategies is building a patent-pending portfolio around governed institutional intelligence:
 
 - **StarBridge OS** — governance runtime for identity-bound AI.
 - **FIP** — Fractured Identity Protocol for identity reconstruction, provenance, and governed continuity.
-- **PSA** — Product Support Authority, patent-pending technology for governed product knowledge operations across internal and external support.
+- **PSA** — Product Support Authority for governed product knowledge operations across internal and external support.
 - **AAIR** — Authorized AI Representative, a governed representative surface for bounded AI interaction and escalation.
 - **Persona / cArla** — governed synthetic persona environments operating within explicit identity, authority, and lifecycle boundaries.
 
@@ -56,7 +56,7 @@ Models may generate intelligence. StarBridge governs identity, authority, lifecy
 
 ## PSA: Product Support Authority
 
-PSA is patent-pending Product Support Authority technology for governed product knowledge operations across internal and external support.
+PSA is part of the patent-pending StarBridge portfolio for governed product knowledge operations across internal and external support.
 
 PSA controls how AI systems, support teams, internal representatives, field or developer-support workflows, customer-facing agents, and authorized automation may:
 
@@ -116,7 +116,7 @@ The immediate goal is a focused alignment conversation with the right product or
 
 StarBridge OS is governed institutional intelligence infrastructure for identity-bound AI. It provides authority-state governance over what AI systems may know, use, disclose, refuse, escalate, act upon, and audit across models, support workflows, representative surfaces, and enterprise environments.
 
-PSA, Product Support Authority, is patent-pending technology applying those principles to governed product knowledge operations across internal and external support.
+PSA, Product Support Authority, applies those patent-pending portfolio principles to governed product knowledge operations across internal and external support.
 
 AAIR, Authorized AI Representative, provides a governed representative interface operating under StarBridge and PSA authority control.
 
